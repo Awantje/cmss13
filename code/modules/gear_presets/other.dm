@@ -1,6 +1,7 @@
 /datum/equipment_preset/other
 	name = "Other"
 	languages = list(LANGUAGE_ENGLISH)
+	paygrades = list(PAY_SHORT_CIV = JOB_PLAYTIME_TIER_0)
 
 //*****************************************************************************************************/
 
@@ -8,8 +9,7 @@
 	name = "Mutineer"
 	flags = EQUIPMENT_PRESET_EXTRA
 
-/datum/equipment_preset/other/mutineer/load_status(mob/living/carbon/human/new_human)
-	. = ..()
+/datum/equipment_preset/other/mutineer/load_preset(mob/living/carbon/human/new_human)
 	new_human.mob_flags |= MUTINEER
 	new_human.hud_set_squad()
 
@@ -20,7 +20,8 @@
 	name = "Mutineer Leader"
 	flags = EQUIPMENT_PRESET_EXTRA
 
-/datum/equipment_preset/other/mutineer/leader/load_status(mob/living/carbon/human/new_human)
+/datum/equipment_preset/other/mutineer/leader/load_preset(mob/living/carbon/human/new_human)
+	. = ..()
 	for(var/datum/action/human_action/activable/mutineer/A in new_human.actions)
 		A.remove_from(new_human)
 

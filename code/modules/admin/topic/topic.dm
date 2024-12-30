@@ -854,7 +854,7 @@
 			return
 
 		var/datum/equipment_preset/other/mutineer/leader/leader_preset = new()
-		leader_preset.load_status(H)
+		leader_preset.load_preset(H)
 
 		message_admins("[key_name_admin(usr)] has made [key_name_admin(H)] into a mutineer leader.")
 

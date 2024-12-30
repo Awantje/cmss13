@@ -14,7 +14,7 @@
 		preset = GLOB.gear_path_presets_list[/datum/equipment_preset/other/mutineer/leader]
 
 
-	preset.load_status(H)
+	preset.load_preset(H)
 
 	var/title = params["leader"]? "mutineer leader" : "mutineer"
 	message_admins("[key_name_admin(user)] has made [key_name_admin(H)] into a [title].")

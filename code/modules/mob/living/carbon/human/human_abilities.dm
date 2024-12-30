@@ -591,10 +591,10 @@ CULT
 	shipwide_ai_announcement("DANGER: Communications received; a mutiny is in progress. Code: Detain, Arrest, Defend.")
 	var/datum/equipment_preset/other/mutineer/XC = new()
 
-	XC.load_status(H)
+	XC.load_preset(H)
 	for(var/datum/action/human_action/activable/mutineer/mutineer_convert/converted in H.actions)
 		for(var/mob/living/carbon/human/chosen in converted.converted)
-			XC.load_status(chosen)
+			XC.load_preset(chosen)
 		converted.remove_from(H)
 
 	message_admins("[key_name_admin(H)] has begun the mutiny.")
